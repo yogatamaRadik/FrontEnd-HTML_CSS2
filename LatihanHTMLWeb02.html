@@ -1,165 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan Web02</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Web02</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-                "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            padding: 2rem;
-            line-height: 1.6;
-        }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: #fafafa;
+      color: #333;
+      padding: 2rem;
+    }
 
-        h1 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
+    .form-card {
+      max-width: 48rem;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid #9ca3af;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-        .instruction {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
+    .form-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
 
-        .form-card {
-            max-width: 48rem;
-            background-color: #ffffff;
-            border: 2px solid #9ca3af;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
+    .form-group.address {
+      align-items: center; /* buat label Address sejajar tengah textarea */
+    }
 
-        .form-group {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
+    .form-label {
+      min-width: 120px;
+      font-size: 1.1rem;
+    }
 
-        .form-group.address {
-            align-items: center;
-        }
+    input, textarea {
+      flex: 1;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1rem;
+      padding: 0.5rem 0.75rem;
+      border: 2px solid #9ca3af;
+      border-radius: 4px;
+      color: #333;
+    }
 
-        .form-label {
-            font-size: 1.125rem;
-            min-width: 120px;
-            text-align: left;
-            color: #333;
-        }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #6b7280;
+    }
 
-        .form-label.address-label {
-            padding-top: 0.5;
-        }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
 
-        .form-input {
-            flex: 1;
-            padding: 0.5rem 0.75rem;
-            font-size: 1rem;
-            border: 2px solid #9ca3af;
-            border-radius: 4px;
-            background-color: #ffffff;
-            color: #333;
-            font-family: inherit;
-        }
+    input::placeholder, textarea::placeholder {
+      color: #9ca3af;
+    }
 
-        .form-input:focus {
-            outline: none;
-            border-color: #6b7280;
-        }
-
-        .form-textarea {
-            flex: 1;
-            padding: 0.5rem 0.75rem;
-            font-size: 1rem;
-            border: 2px solid #9ca3af;
-            border-radius: 4px;
-            background-color: #ffffff;
-            color: #333;
-            font-family: inherit;
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-textarea:focus {
-            outline: none;
-            border-color: #6b7280;
-        }
-
-        .form-input.postcode {
-            max-width: 20rem;
-        }
-
-        .form-input::placeholder,
-        .form-textarea::placeholder {
-            color: #9ca3af;
-        }
-    </style>
+    .postcode {
+      max-width: 20rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- Form Card -->
-    <div class="form-card">
-        <form>
-            <!-- Name Field -->
-            <div class="form-group">
-                <label for="name" class="form-label">Name:</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    class="form-input" 
-                    placeholder="your name here"
-                >
-            </div>
+  <div class="form-card">
+    <form>
+      <div class="form-group">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" name="name" placeholder="your name here">
+      </div>
 
-            <!-- Email Field -->
-            <div class="form-group">
-                <label for="email" class="form-label">Email:</label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    class="form-input" 
-                    placeholder="your email here"
-                >
-            </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" placeholder="your email here">
+      </div>
 
-            <!-- Address Field -->
-            <div class="form-group address">
-                <label for="address" class="form-label address-label">Address:</label>
-                <textarea 
-                    id="address" 
-                    name="address" 
-                    class="form-textarea" 
-                    placeholder="25 Nowhere Street&#10;Somewhere&#10;Not Here&#10;Y2R 5RD"
-                    rows="6"
-                ></textarea>
-            </div>
+      <div class="form-group address">
+        <label for="address" class="form-label">Address:</label>
+        <textarea id="address" name="address" placeholder="25 Nowhere Street&#10;Somewhere&#10;Not Here&#10;Y2R 5RD" rows="6"></textarea>
+      </div>
 
-            <!-- Postcode Field -->
-            <div class="form-group">
-                <label for="postcode" class="form-label">Postcode:</label>
-                <input 
-                    type="text" 
-                    id="postcode" 
-                    name="postcode" 
-                    class="form-input postcode" 
-                    placeholder="postal code"
-                >
-            </div>
-        </form>
-    </div>
+      <div class="form-group">
+        <label for="postcode" class="form-label">Postcode:</label>
+        <input type="text" id="postcode" name="postcode" class="postcode" placeholder="postal code">
+      </div>
+    </form>
+  </div>
 </body>
 </html>
